@@ -1,8 +1,11 @@
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+
 export default function Home() {
   return (
     <main>
-      <h1>TokoMC</h1>
-      <p>در حال ساخت...</p>
+      <Navbar />
+      <Hero />
     </main>
   );
 }
