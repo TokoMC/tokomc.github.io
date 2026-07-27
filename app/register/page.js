@@ -1,4 +1,45 @@
+"use client";
+
+import { useState } from "react";
+import { supabase } from "@/lib/supabase";
+
 export default function RegisterPage() {
+
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [message, setMessage] = useState("");
+
+
+  async function handleRegister(e) {
+    e.preventDefault();
+
+    setMessage("در حال ساخت حساب...");
+
+
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+    });
+
+
+    if (error) {
+      setMessage(error.message);
+      return;
+    }
+
+
+    setMessage(
+      "حساب ساخته شد. ایمیل خود را تایید کنید."
+    );
+
+
+    console.log(data);
+
+  }
+
+
   return (
     <main
       className="
@@ -10,7 +51,8 @@ export default function RegisterPage() {
       "
     >
 
-      <div
+      <form
+        onSubmit={handleRegister}
         className="
         w-full
         max-w-md
@@ -38,18 +80,21 @@ export default function RegisterPage() {
 
         <div className="space-y-5">
 
+
           <input
             type="text"
             placeholder="نام کاربری"
+            value={username}
+            onChange={(e)=>setUsername(e.target.value)}
             className="
             w-full
             px-5
             py-3
             rounded-xl
             bg-black/30
+            text-white
             border
             border-white/10
-            text-white
             "
           />
 
@@ -57,15 +102,17 @@ export default function RegisterPage() {
           <input
             type="email"
             placeholder="ایمیل"
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}
             className="
             w-full
             px-5
             py-3
             rounded-xl
             bg-black/30
+            text-white
             border
             border-white/10
-            text-white
             "
           />
 
@@ -73,20 +120,23 @@ export default function RegisterPage() {
           <input
             type="password"
             placeholder="رمز عبور"
+            value={password}
+            onChange={(e)=>setPassword(e.target.value)}
             className="
             w-full
             px-5
             py-3
             rounded-xl
             bg-black/30
+            text-white
             border
             border-white/10
-            text-white
             "
           />
 
 
           <button
+            type="submit"
             className="
             w-full
             py-3
@@ -101,10 +151,16 @@ export default function RegisterPage() {
             ثبت نام
           </button>
 
+
+          <p className="text-green-400 text-center">
+            {message}
+          </p>
+
+
         </div>
 
 
-      </div>
+      </form>
 
     </main>
   );
