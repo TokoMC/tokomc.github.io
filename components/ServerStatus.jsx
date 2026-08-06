@@ -1,29 +1,30 @@
+"use client";
+
 export default function ServerStatus() {
   return (
     <section
-      id="status"
       className="
       py-24
       px-6
-      bg-black/20
-      backdrop-blur
       "
     >
-
-      <div className="max-w-5xl mx-auto">
-
+      <div
+        className="
+        max-w-7xl
+        mx-auto
+        "
+      >
         <h2
           className="
           text-4xl
           font-black
           text-center
           text-white
-          mb-12
+          mb-14
           "
         >
           وضعیت سرور
         </h2>
-
 
         <div
           className="
@@ -39,21 +40,35 @@ export default function ServerStatus() {
             backdrop-blur-xl
             border
             border-white/10
-            rounded-2xl
-            p-6
+            rounded-3xl
+            p-8
             text-center
+            transition-all
+            duration-300
             hover:scale-105
-            transition
             "
           >
-            <h3 className="text-gray-400 mb-3">
-              وضعیت
-            </h3>
 
-            <p className="text-green-400 text-2xl font-bold">
+            <div className="text-5xl mb-5">
+              🟢
+            </div>
+
+            <h3
+              className="
+              text-2xl
+              font-bold
+              text-white
+              "
+            >
               آنلاین
+            </h3>
+
+            <p className="text-zinc-400 mt-3">
+              Server is Online
             </p>
+
           </div>
+
 
 
           <div
@@ -62,21 +77,35 @@ export default function ServerStatus() {
             backdrop-blur-xl
             border
             border-white/10
-            rounded-2xl
-            p-6
+            rounded-3xl
+            p-8
             text-center
+            transition-all
+            duration-300
             hover:scale-105
-            transition
             "
           >
-            <h3 className="text-gray-400 mb-3">
-              بازیکنان
+
+            <div className="text-5xl mb-5">
+              👥
+            </div>
+
+            <h3
+              className="
+              text-2xl
+              font-bold
+              text-white
+              "
+            >
+              0
             </h3>
 
-            <p className="text-white text-2xl font-bold">
-              0 / 100
+            <p className="text-zinc-400 mt-3">
+              بازیکن آنلاین
             </p>
+
           </div>
+
 
 
           <div
@@ -85,27 +114,37 @@ export default function ServerStatus() {
             backdrop-blur-xl
             border
             border-white/10
-            rounded-2xl
-            p-6
+            rounded-3xl
+            p-8
             text-center
+            transition-all
+            duration-300
             hover:scale-105
-            transition
             "
           >
-            <h3 className="text-gray-400 mb-3">
-              نسخه
+
+            <div className="text-5xl mb-5">
+              🌍
+            </div>
+
+            <h3
+              className="
+              text-2xl
+              font-bold
+              text-white
+              "
+            >
+              play.tokomc.ir
             </h3>
 
-            <p className="text-white text-2xl font-bold">
-              1.20+
+            <p className="text-zinc-400 mt-3">
+              آدرس سرور
             </p>
-          </div>
 
+          </div>
 
         </div>
-
       </div>
-
     </section>
   );
 }
