@@ -1,111 +1,139 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-
+    <section
+      className="
+      relative
+      min-h-screen
+      flex
+      items-center
+      justify-center
+      px-6
+      overflow-hidden
+      "
+    >
       {/* Background */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/background.png"
-          alt="TokoMC Background"
-          fill
-          priority
-          className="object-cover blur-sm scale-105"
-        />
 
-        <div className="absolute inset-0 bg-black/60" />
-      </div>
+      <div
+        className="
+        absolute
+        inset-0
+        bg-gradient-to-b
+        from-zinc-900
+        via-black
+        to-zinc-950
+        "
+      />
 
+      {/* بعداً عکس PNG بک‌گراند اینجا قرار می‌گیرد */}
+
+      <div
+        className="
+        absolute
+        inset-0
+        bg-black/40
+        backdrop-blur-sm
+        "
+      />
 
       {/* Content */}
-      <div className="text-center px-6">
 
-        {/* Logo */}
-        <div className="flex justify-center mb-8 animate-pulse">
-          <Image
-            src="/logo.png"
-            alt="TokoMC Logo"
-            width={180}
-            height={180}
-            className="
-            hover:scale-110
-            transition duration-500
-            drop-shadow-[0_0_25px_rgba(34,197,94,0.5)]
-            "
-          />
-        </div>
+      <div
+        className="
+        relative
+        z-10
+        text-center
+        max-w-4xl
+        "
+      >
+        {/* لوگوی PNG بعداً اینجا قرار می‌گیرد */}
 
+        <div
+          className="
+          w-36
+          h-36
+          mx-auto
+          rounded-full
+          bg-green-500/20
+          border
+          border-green-500/30
+          mb-8
+          "
+        />
 
-        {/* Title */}
         <h1
           className="
-          text-5xl md:text-7xl
+          text-6xl
+          md:text-8xl
           font-black
           text-white
-          mb-5
-          tracking-wide
           "
         >
           TokoMC
         </h1>
 
-
-        {/* Description */}
         <p
           className="
-          text-gray-300
-          text-lg
-          md:text-xl
-          max-w-2xl
-          mx-auto
-          mb-10
+          mt-8
+          text-xl
+          text-zinc-300
+          leading-8
           "
         >
-          بهترین تجربه ماینکرفت فارسی با امکانات حرفه‌ای و جامعه‌ای بزرگ
+          بهترین سرور ماینکرفت با امکانات حرفه‌ای،
+          جامعه فعال و تجربه‌ای متفاوت.
         </p>
 
-
-        {/* Buttons */}
-        <div className="flex flex-wrap justify-center gap-5">
-
-          <button
+        <div
+          className="
+          flex
+          flex-wrap
+          justify-center
+          gap-5
+          mt-12
+          "
+        >
+          <Link
+            href="/register"
             className="
-            px-8 py-4
+            px-8
+            py-4
             rounded-2xl
             bg-green-500
             text-black
             font-bold
+            transition-all
+            duration-300
             hover:scale-110
-            transition
-            shadow-xl
-            shadow-green-500/30
+            hover:shadow-2xl
             "
           >
-            ورود به سرور
-          </button>
+            شروع بازی
+          </Link>
 
-
-          <button
+          <Link
+            href="/status"
             className="
-            px-8 py-4
+            px-8
+            py-4
             rounded-2xl
             bg-white/10
-            backdrop-blur
-            border border-white/20
+            backdrop-blur-xl
+            border
+            border-white/10
             text-white
-            font-bold
+            transition-all
+            duration-300
             hover:scale-110
-            transition
             "
           >
-            دیسکورد
-          </button>
-
+            وضعیت سرور
+          </Link>
         </div>
-
       </div>
-
     </section>
   );
 }
