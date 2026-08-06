@@ -1,64 +1,122 @@
+"use client";
+
+import Link from "next/link";
+
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 right-0 left-0 z-50 backdrop-blur-md bg-black/30 border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <header
+      className="
+      fixed
+      top-0
+      left-0
+      w-full
+      z-50
+      backdrop-blur-xl
+      bg-black/30
+      border-b
+      border-white/10
+      "
+    >
+      <div
+        className="
+        max-w-7xl
+        mx-auto
+        px-6
+        h-20
+        flex
+        items-center
+        justify-between
+        "
+      >
+        {/* Logo */}
 
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
-            <span className="text-green-400 font-bold">
-              T
-            </span>
-          </div>
+        <div
+          className="
+          flex
+          items-center
+          gap-3
+          "
+        >
+          {/* بعداً لوگوی PNG اینجا قرار می‌گیرد */}
 
-          <h1 className="text-xl font-bold text-white">
+          <div
+            className="
+            w-12
+            h-12
+            rounded-xl
+            bg-green-500
+            "
+          />
+
+          <h1
+            className="
+            text-2xl
+            font-black
+            text-white
+            "
+          >
             TokoMC
           </h1>
         </div>
 
+        {/* Menu */}
 
-        <div className="hidden md:flex items-center gap-6 text-gray-300">
+        <nav
+          className="
+          hidden
+          md:flex
+          gap-8
+          text-white
+          "
+        >
+          <Link href="/">خانه</Link>
 
-          <a
-            href="#status"
-            className="hover:text-green-400 transition"
-          >
-            وضعیت سرور
-          </a>
+          <Link href="/rules">قوانین</Link>
 
-          <a
-            href="#ranks"
-            className="hover:text-green-400 transition"
-          >
-            رنک‌ها
-          </a>
+          <Link href="/ranks">رنک‌ها</Link>
 
-          <a
-            href="#rules"
-            className="hover:text-green-400 transition"
-          >
-            قوانین
-          </a>
+          <Link href="/profile">پروفایل</Link>
+        </nav>
 
-          <a
+        {/* Buttons */}
+
+        <div
+          className="
+          flex
+          gap-3
+          "
+        >
+          <Link
             href="/login"
             className="
-            px-5 py-2
+            px-5
+            py-2
+            rounded-xl
+            bg-white/10
+            hover:bg-white/20
+            transition
+            "
+          >
+            ورود
+          </Link>
+
+          <Link
+            href="/register"
+            className="
+            px-5
+            py-2
             rounded-xl
             bg-green-500
             text-black
             font-bold
             hover:scale-105
             transition
-            shadow-lg
-            shadow-green-500/30
             "
           >
-            ورود
-          </a>
-
+            ثبت نام
+          </Link>
         </div>
-
       </div>
-    </nav>
+    </header>
   );
 }
