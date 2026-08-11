@@ -112,7 +112,7 @@ export default function AdminPage() {
         mb-10
         "
       >
-        پنل مدیریت TokoMC
+        پنل مدیریت Tokiba
       </h1>
 
 
