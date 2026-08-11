@@ -72,7 +72,7 @@ export default function Hero() {
           text-white
           "
         >
-          TokoMC
+          Tokiba
         </h1>
 
         <p
