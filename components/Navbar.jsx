@@ -55,7 +55,7 @@ export default function Navbar() {
             text-white
             "
           >
-            TokoMC
+            Tokiba
           </h1>
         </div>
 
